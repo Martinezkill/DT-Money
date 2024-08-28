@@ -18,13 +18,13 @@ export function SearchForm() {
 
     const { 
         register,
-         handleSubmit, formState: {isSubmitting}
+         handleSubmit, formState: { isSubmitting },
          } = useForm<SearchFormInputs>({
         resolver: zodResolver(searchFormSchema),
     })
 
     async function handleSearchTransactions(data:SearchFormInputs) {
-        await fetchTransactions(data.query)  
+        await fetchTransactions(data.query)
     }
 
     return (
